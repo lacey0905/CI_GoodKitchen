@@ -15,10 +15,11 @@
 
 	$.ajax({
 		// url: 'http://openAPI.seoul.go.kr:8088/424b627a726c616339396d69555078/json/ListPriceModelStoreService/1/10/001',
-		url: 'map',
+		url: '/index.php/map',
 		cache: false,                     //사용자캐시를 사용할 것인가.
 		dataType: "json",                  //서버로부터 받을 것으로 예상되는 데이터 타입.
 		success: function(data){          //ajax요청을 통해 반환되는 데이터 data.
+			console.log(data);
 			var row = data.ListPriceModelStoreService.row;
 			for(var i=0; i<row.length; i++) {
 				maxMarker(row[i].SH_ADDR, row[i].SH_NAME);
